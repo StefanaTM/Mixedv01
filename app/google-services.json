@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "609038085834",
+    "project_id": "mixedv01",
+    "storage_bucket": "mixedv01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609038085834:android:f87dabd15f58b30cb88e33",
+        "android_client_info": {
+          "package_name": "com.game.mixed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609038085834-miuft8kg6ibd3gb5rbaj6vks3073dmio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.game.mixed",
+            "certificate_hash": "2fc9863b268dfc6ded933951c74508b49c144bdc"
+          }
+        },
+        {
+          "client_id": "609038085834-u93b694ol5ckumdnnu9s645o6mtjjdg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPsnnYysHrcSv0cgy5WaGPP9J4AS3SFOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609038085834-u93b694ol5ckumdnnu9s645o6mtjjdg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

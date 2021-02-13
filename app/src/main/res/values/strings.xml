@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Mixed</string>
+    <string name="instructions">
+        <![CDATA[
+        <p>The game consists in writing a group of 3 cards or a multiple of 3 (6, 9, 12, etc).</p>
+
+        <p>Each card has it’s unique purpose:<br>
+        First card: Write an ACTION<br>
+        e.g 1: “I was scratching my dog’s belly”<br>
+        e.g 2: “I was writing a love letter”</p>
+
+        <p>Second card: Write a PLACE<br>
+        e.g 1: “On top of a car”<br>
+        e.g 2: “Next to my fiance”</p>
+
+        <p>Third card: Write a CONTINUATION OF ACTION<br>
+        e.g 1: “And then I threw up”<br>
+        e.g 2: “And then I walked away like nothing happened”</p>
+
+        <p>The cards should not be related to each other. Write whatever you want using your creativity.</p>
+
+        <p>At the end, each player will randomly draw one card from each category (action, place and continuation of action) and will read the result out loud so everyone will hear.</p>
+        ]]>
+
+    </string>
+
+</resources>

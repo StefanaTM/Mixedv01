@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:background="#FFF5BE">
+
+    <ImageView
+        android:id="@+id/logo_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/xregemail"
+        android:layout_marginBottom="90dp"/>
+
+    <EditText
+        android:id="@+id/xregnickname"
+        android:layout_width="294dp"
+        android:layout_height="40dp"
+        android:ems="6"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/insert_pin"
+        android:layout_above="@id/xregemail"
+        android:layout_marginBottom="13dp"
+        android:hint="Nickname"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/xregemail"
+        android:layout_width="294dp"
+        android:layout_height="40dp"
+        android:ems="6"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/insert_pin"
+        android:layout_above="@id/xregpassword"
+        android:layout_marginBottom="7dp"
+        android:hint="Email Address"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/xregpassword"
+        android:layout_width="294dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginBottom="7dp"
+        android:layout_weight="1"
+        android:ems="6"
+        android:hint="Password"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/insert_pin"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/xregconfpassword"
+        android:layout_width="294dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/xregpassword"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="76dp"
+        android:layout_weight="1"
+        android:ems="6"
+        android:hint="Confirm Password"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/insert_pin"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/xregRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:background="@drawable/dr_createaccount"
+        android:padding="10dp"
+        android:ems="7"
+        android:textSize="28dp"
+        android:textAllCaps="false"
+        android:layout_below="@id/xregconfpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <Button
+        android:id="@+id/xregLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:background="@drawable/create_room"
+        android:padding="10dp"
+        android:ems="7"
+        android:textSize="28dp"
+        android:textAllCaps="false"
+        android:layout_below="@id/xregRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>
