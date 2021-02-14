@@ -11,12 +11,10 @@ import android.widget.TextView;
 
 public class InsertNameActivity extends AppCompatActivity {
 
-    TextView playerName;
-    EditText insertName;
-    CheckBox chk_admin;
+    private TextView playerName;
+    private EditText insertName;
     private Button btn_next;
     Typeface chelsea;
-    private Object CheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +22,14 @@ public class InsertNameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_insert_name);
 
         //setare font
-        playerName=(TextView) findViewById(R.id.playerName);
-        insertName=(EditText) findViewById(R.id.insertName);
-        chk_admin=(CheckBox)findViewById(R.id.chk_admin);
-        btn_next=(Button) findViewById(R.id.btn_next);
+        playerName=(TextView) findViewById(R.id.insnameRoomName);
+        insertName=(EditText) findViewById(R.id.insnameInsertName);
+        btn_next=(Button) findViewById(R.id.insnameNext);
 
         chelsea=Typeface.createFromAsset(getAssets(), "chelsea.ttf");
 
         playerName.setTypeface(chelsea);
         insertName.setTypeface(chelsea);
-        chk_admin.setTypeface(chelsea);
         btn_next.setTypeface(chelsea);
     }
 }

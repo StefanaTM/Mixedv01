@@ -7,24 +7,49 @@
     tools:context=".HomeActivity"
     android:background="#FFF5BE">
 
+    <TextView
+        android:id="@+id/homeVerifyEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Please verify your email address before starting."
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/homeVerifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Email"
+        android:textAllCaps="false"
+        android:background="@drawable/dr_instructions"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:ems="7"
+        android:layout_below="@id/homeVerifyEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
     <ImageView
-        android:id="@+id/logo_home"
+        android:id="@+id/logo_homehome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/insertPin"
-        android:layout_marginBottom="80dp"/>
+        android:layout_above="@id/homeInsertPin"
+        android:layout_marginBottom="30dp"/>
 
     <TextView
-        android:id="@+id/or"
+        android:id="@+id/homeOr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OR"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#999595"
         android:layout_marginTop="15dp" />
 
@@ -33,16 +58,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_above="@id/or">
+        android:layout_above="@id/homeOr">
 
         <EditText
-            android:id="@+id/pinNumber"
-            android:layout_width="294dp"
+            android:id="@+id/homePinNumber"
+            android:layout_width="0dp"
             android:maxLength="5"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"
-            android:layout_marginLeft="76dp"
+            android:layout_marginStart="76dp"
             android:layout_weight="1"
             android:background="@drawable/insert_pin"
             android:ems="6"
@@ -53,16 +77,15 @@
             android:textSize="30sp" />
 
         <ImageView
-            android:id="@+id/playBtn"
+            android:id="@+id/homePlayBtn"
             android:layout_width="73dp"
             android:layout_height="57dp"
-            app:srcCompat="@drawable/startbtn"
-            android:layout_toRightOf="@id/pinNumber" />
+            app:srcCompat="@drawable/startbtn" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/insertPin"
+        android:id="@+id/homeInsertPin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -79,32 +102,34 @@
 
 
     <Button
-        android:id="@+id/createRoom"
+        android:id="@+id/homeCreateRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+ Create room"
         android:background="@drawable/create_room"
         android:padding="10dp"
         android:ems="7"
-        android:textSize="28dp"
+        android:textSize="28sp"
         android:textAllCaps="false"
-        android:layout_below="@id/or"
+        android:layout_below="@id/homeOr"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"/>
 
     <Button
-        android:id="@+id/instructions"
+        android:id="@+id/homeInstructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instructions"
         android:textAllCaps="false"
         android:background="@drawable/dr_instructions"
         android:padding="10dp"
-        android:textSize="28dp"
+        android:textSize="28sp"
         android:ems="7"
-        android:layout_below="@id/createRoom"
+        android:layout_below="@id/homeCreateRoom"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
+
+
 
 
 </RelativeLayout>

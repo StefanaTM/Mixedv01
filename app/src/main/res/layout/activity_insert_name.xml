@@ -7,14 +7,23 @@
     tools:context=".InsertNameActivity"
     android:background="#FFF5BE">
 
+    <ImageView
+        android:id="@+id/logo_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/insnameRoomName"
+        android:layout_marginBottom="80dp"/>
+
     <TextView
-        android:id="@+id/playerName"
+        android:id="@+id/insnameRoomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Player name"
+        android:text="Room name"
         android:textSize="28sp"
-        android:layout_above="@id/insertName"
+        android:layout_above="@id/insnameInsertName"
         android:layout_marginBottom="10dp"
         android:textStyle="bold"
         android:textColor="#000"
@@ -24,36 +33,24 @@
         android:shadowRadius="2"/>
 
     <EditText
-        android:id="@+id/insertName"
+        android:id="@+id/insnameInsertName"
         android:layout_width="294dp"
         android:maxWidth="294dp"
         android:layout_height="wrap_content"
         android:maxHeight="48dp"
-        android:maxLength="13"
+        android:maxLength="17"
         android:gravity="center"
         android:ems="6"
-        android:hint="your name..."
+        android:hint="room name"
         android:background="@drawable/insert_pin"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:padding="6dp"
         android:textSize="27sp"
-        />
-    <CheckBox
-        android:id="@+id/chk_admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="#000000"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_below="@id/insertName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="I am admin"
-        android:textColor="#000000"/>
+        android:inputType="text"/>
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/insnameNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
@@ -61,12 +58,12 @@
         android:padding="10dp"
         android:ems="4"
         android:textColor="#000000"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textAllCaps="false"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"/>
 
 
 </RelativeLayout>

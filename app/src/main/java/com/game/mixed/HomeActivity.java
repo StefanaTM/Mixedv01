@@ -6,19 +6,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
-    private TextView insertPin, or;
-    private EditText pin;
-    private Button createRoom, instructions;
+    private TextView txt_homeInsertPin, txt_homeOr, txt_homeVerifyEmail;
+    private EditText txt_homePin;
+    private Button btn_homeCreateRoom, btn_homeInstructions, btn_homeVerify;
+    private LinearLayout layout;
+    private ImageView logo;
     private Typeface chelsea;
     private FirebaseAuth firebaseAuth;
 
@@ -33,32 +40,61 @@ public class HomeActivity extends AppCompatActivity {
         //getSupportActionBar().hide();
 
         //setare font
-        insertPin=(TextView) findViewById(R.id.insertPin);
-        or=(TextView)findViewById(R.id.or);
-        pin=(EditText) findViewById(R.id.pinNumber);
-        createRoom=(Button)findViewById(R.id.createRoom);
-        instructions=(Button) findViewById(R.id.instructions);
+        txt_homeInsertPin=(TextView) findViewById(R.id.homeInsertPin);
+        txt_homeOr=(TextView)findViewById(R.id.homeOr);
+        txt_homePin=(EditText) findViewById(R.id.homePinNumber);
+        txt_homeVerifyEmail = findViewById(R.id.homeVerifyEmail);
+        btn_homeVerify = findViewById(R.id.homeVerifyButton);
+        btn_homeCreateRoom=(Button)findViewById(R.id.homeCreateRoom);
+        btn_homeInstructions=(Button) findViewById(R.id.homeInstructions);
+        logo=findViewById(R.id.logo_homehome);
+        layout=findViewById(R.id.layout);
 
         chelsea=Typeface.createFromAsset(getAssets(), "chelsea.ttf");
 
-        insertPin.setTypeface(chelsea);
-        or.setTypeface(chelsea);
-        pin.setTypeface(chelsea);
-        createRoom.setTypeface(chelsea);
-        instructions.setTypeface(chelsea);
+        txt_homeInsertPin.setTypeface(chelsea);
+        txt_homeOr.setTypeface(chelsea);
+        txt_homePin.setTypeface(chelsea);
+        btn_homeCreateRoom.setTypeface(chelsea);
+        btn_homeInstructions.setTypeface(chelsea);
 
         //catre pagina Instructiuni
-        instructions.setOnClickListener(new View.OnClickListener() {
+        btn_homeInstructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openInstructions();
             }
         });
 
-        createRoom.setOnClickListener(new View.OnClickListener() {
+        btn_homeCreateRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openInsertName();
+            }
+        });
+
+        if(!firebaseAuth.getCurrentUser().isEmailVerified()){
+            btn_homeVerify.setVisibility(View.VISIBLE);
+            txt_homeVerifyEmail.setVisibility(View.VISIBLE);
+            logo.setVisibility(View.GONE);
+            txt_homeInsertPin.setVisibility(View.GONE);
+            txt_homeOr.setVisibility(View.GONE);
+            txt_homePin.setVisibility(View.GONE);
+            btn_homeCreateRoom.setVisibility(View.GONE);
+            btn_homeInstructions.setVisibility(View.GONE);
+            layout.setVisibility(View.GONE);
+        }
+
+        btn_homeVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //send the verification email
+                firebaseAuth.getCurrentUser().sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(HomeActivity.this, "Verification email sent.", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }
