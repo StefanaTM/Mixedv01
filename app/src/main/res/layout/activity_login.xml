@@ -49,6 +49,15 @@
         android:textSize="20sp"
         android:inputType="textPassword"/>
 
+    <TextView
+        android:id="@+id/xlogforgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Forgot password?"
+        android:layout_below="@id/xlogpassword"
+        android:layout_marginTop="5dp" />
+
     <Button
         android:id="@+id/xloglogin"
         android:layout_width="wrap_content"
