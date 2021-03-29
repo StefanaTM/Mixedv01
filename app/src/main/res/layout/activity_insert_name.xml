@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/insnameRoomName"
         android:layout_marginBottom="80dp"/>
@@ -21,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Room name"
+        android:text="@string/room_name"
         android:textSize="28sp"
         android:layout_above="@id/insnameInsertName"
         android:layout_marginBottom="10dp"
@@ -41,19 +42,20 @@
         android:maxLength="17"
         android:gravity="center"
         android:ems="6"
-        android:hint="room name"
+        android:hint="@string/room_nameinsert"
         android:background="@drawable/insert_pin"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:padding="6dp"
         android:textSize="27sp"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/insnameNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/next_btn"
         android:background="@drawable/btn_next"
         android:padding="10dp"
         android:ems="4"

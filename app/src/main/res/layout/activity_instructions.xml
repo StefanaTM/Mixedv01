@@ -14,7 +14,7 @@
         android:textColor="#000"
         android:textSize="15sp"
         android:layout_margin="20dp"
-        android:textAppearance="?android:textAppearanceMedium"/>
+        android:textAppearance="?android:textAppearanceMedium" />
     <TextView
         android:id="@+id/enjoy"
         android:layout_width="wrap_content"

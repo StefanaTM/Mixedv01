@@ -2,7 +2,7 @@
     <string name="app_name">Mixed</string>
     <string name="instructions">
         <![CDATA[
-        <p>The game consists in writing a group of 3 cards or a multiple of 3 (6, 9, 12, etc).</p>
+        <p>The game consists in writing three sets of cards, each set containing 3 cards.</p>
 
         <p>Each card has it’s unique purpose:<br>
         First card: Write an ACTION<br>
@@ -18,10 +18,21 @@
         e.g 2: “And then I walked away like nothing happened”</p>
 
         <p>The cards should not be related to each other. Write whatever you want using your creativity.</p>
+        <p>After all player finished writing, all the cards will be mixed.</p>
 
-        <p>At the end, each player will randomly draw one card from each category (action, place and continuation of action) and will read the result out loud so everyone will hear.</p>
+        <p>At the end, each player will randomly draw one card from each category (action, place and continuation of action) and will read the result out loud so everyone to hear the combination result.</p>
         ]]>
 
     </string>
+    <string name="or">OR</string>
+    <string name="pin">PIN</string>
+    <string name="insert_pin">Insert PIN</string>
+    <string name="create_room">+ Create room</string>
+    <string name="instructions_btn">Instructions</string>
+    <string name="logo">Logo</string>
+    <string name="play_btn">playbtn</string>
+    <string name="room_name">Room name</string>
+    <string name="room_nameinsert">room name</string>
+    <string name="next_btn">Next</string>
 
 </resources>

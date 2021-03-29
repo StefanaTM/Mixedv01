@@ -7,34 +7,10 @@
     tools:context=".HomeActivity"
     android:background="#FFF5BE">
 
-    <TextView
-        android:id="@+id/homeVerifyEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Please verify your email address before starting."
-        android:textStyle="bold"
-        android:visibility="gone"/>
-
-    <Button
-        android:id="@+id/homeVerifyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verify Email"
-        android:textAllCaps="false"
-        android:background="@drawable/dr_instructions"
-        android:padding="10dp"
-        android:textSize="15sp"
-        android:ems="7"
-        android:layout_below="@id/homeVerifyEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"/>
-
     <ImageView
         android:id="@+id/logo_homehome"
         android:layout_width="wrap_content"
+        android:contentDescription="@string/logo"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logo"
         android:layout_centerHorizontal="true"
@@ -45,7 +21,7 @@
         android:id="@+id/homeOr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OR"
+        android:text="@string/or"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textStyle="bold"
@@ -71,16 +47,18 @@
             android:background="@drawable/insert_pin"
             android:ems="6"
             android:gravity="center"
-            android:hint="PIN"
+            android:hint="@string/pin"
             android:inputType="number"
             android:padding="3dp"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:autofillHints="" />
 
         <ImageView
             android:id="@+id/homePlayBtn"
             android:layout_width="73dp"
             android:layout_height="57dp"
-            app:srcCompat="@drawable/startbtn" />
+            app:srcCompat="@drawable/startbtn"
+            android:contentDescription="@string/play_btn"/>
 
     </LinearLayout>
 
@@ -89,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Insert PIN"
+        android:text="@string/insert_pin"
         android:textSize="25sp"
         android:layout_above="@id/layout"
         android:layout_marginBottom="10dp"
@@ -105,7 +83,7 @@
         android:id="@+id/homeCreateRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+ Create room"
+        android:text="@string/create_room"
         android:background="@drawable/create_room"
         android:padding="10dp"
         android:ems="7"
@@ -119,7 +97,7 @@
         android:id="@+id/homeInstructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Instructions"
+        android:text="@string/instructions_btn"
         android:textAllCaps="false"
         android:background="@drawable/dr_instructions"
         android:padding="10dp"
