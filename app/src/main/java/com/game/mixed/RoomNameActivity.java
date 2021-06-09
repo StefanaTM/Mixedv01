@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class InsertNameActivity extends AppCompatActivity {
+public class RoomNameActivity extends AppCompatActivity {
 
     private TextView playerName;
     private EditText insertName;
@@ -19,7 +18,7 @@ public class InsertNameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_name);
+        setContentView(R.layout.activity_room_name);
 
         //setare font
         playerName=(TextView) findViewById(R.id.insnameRoomName);

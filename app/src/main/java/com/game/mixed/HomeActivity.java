@@ -1,24 +1,16 @@
 package com.game.mixed;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView txt_homeInsertPin, txt_homeOr;
@@ -76,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openInsertName(){
-        Intent intent=new Intent(this, InsertNameActivity.class );
+        Intent intent=new Intent(this, RoomNameActivity.class );
         startActivity(intent);
     }
 }
