@@ -34,5 +34,8 @@
     <string name="room_name">Room name</string>
     <string name="room_nameinsert">room name</string>
     <string name="next_btn">Next</string>
+    <string name="nr_groups_cards">Number of groups of cards</string>
+    <string name="nr_cards">1</string>
+    <string name="player_name">Player name</string>
 
 </resources>
