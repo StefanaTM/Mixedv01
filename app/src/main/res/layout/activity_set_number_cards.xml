@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SetNumberCards"
+    tools:context=".SetNumberCardsActivity"
     android:background="#FFF5BE">
 
     <ImageView
@@ -43,7 +43,8 @@
         android:background="@drawable/nr_of_cards_triangle_up"
         android:padding="10dp"
         android:textAllCaps="false"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:onClick="increment"/>
 
     <TextView
         android:id="@+id/nrCards"
@@ -72,14 +73,15 @@
         android:background="@drawable/nr_of_cards_triangle_down"
         android:padding="10dp"
         android:textAllCaps="false"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:onClick="decrement"/>
 
     <Button
         android:id="@+id/nrbtnNext"
         android:layout_width="294dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/nrbtnTriangleDown"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/btn_next"
         android:layout_centerHorizontal="true"

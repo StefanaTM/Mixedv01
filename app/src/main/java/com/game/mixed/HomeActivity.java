@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     private EditText txt_homePin;
     private Button btn_homeCreateRoom, btn_homeInstructions;
     private LinearLayout layout;
-    private ImageView logo;
+    private ImageView logo, btn_play;
     private Typeface chelsea;
 
     @Override
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         txt_homePin=(EditText) findViewById(R.id.homePinNumber);
         btn_homeCreateRoom=(Button)findViewById(R.id.homeCreateRoom);
         btn_homeInstructions=(Button) findViewById(R.id.homeInstructions);
+        btn_play = findViewById(R.id.homePlayBtn);
         logo=findViewById(R.id.logo_homehome);
         layout=findViewById(R.id.layout);
 
@@ -45,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
         btn_homeCreateRoom.setTypeface(chelsea);
         btn_homeInstructions.setTypeface(chelsea);
 
-        //catre pagina Instructiuni
+        //open instructions activity
         btn_homeInstructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //open create room activity
         btn_homeCreateRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,15 +62,31 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //open player name activity
+        btn_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPlayerName();
+            }
+        });
+
     }
 
+    //function open instructions activity
     public void openInstructions(){
         Intent intent=new Intent(this, InstructionsActivity.class);
         startActivity(intent);
     }
 
+    //function open create room activity
     public void openInsertName(){
         Intent intent=new Intent(this, RoomNameActivity.class );
+        startActivity(intent);
+    }
+
+    //function open player name activity
+    public void openPlayerName(){
+        Intent intent=new Intent(this, PlayerNameActivity.class );
         startActivity(intent);
     }
 }

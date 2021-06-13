@@ -43,19 +43,19 @@
                 <EditText
                     android:id="@+id/homePinNumber"
                     android:layout_width="0dp"
-                    android:maxLength="5"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
                     android:layout_marginStart="76dp"
+                    android:layout_marginTop="7dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:background="@drawable/insert_pin"
                     android:ems="6"
                     android:gravity="center"
                     android:hint="@string/pin"
                     android:inputType="number"
+                    android:maxLength="5"
                     android:padding="3dp"
-                    android:textSize="30sp"
-                    android:autofillHints="" />
+                    android:textSize="30sp" />
 
                 <ImageView
                     android:id="@+id/homePlayBtn"

@@ -2,13 +2,15 @@ package com.game.mixed;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-public class SetNumberCards extends AppCompatActivity {
+public class PlayerNameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_number_cards);
+        setContentView(R.layout.activity_player_name);
     }
+
 }

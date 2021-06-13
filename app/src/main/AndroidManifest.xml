@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SetNumberCards"></activity>
+        <activity android:name=".PlayersRoomActivity"></activity>
+        <activity android:name=".PlayerNameActivity" />
+        <activity android:name=".SetNumberCardsActivity" />
         <activity android:name=".RoomNameActivity" />
         <activity android:name=".InstructionsActivity" />
         <activity android:name=".HomeActivity" />
