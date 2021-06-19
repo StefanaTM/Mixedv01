@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomSettingsActivity"
+    android:background="#FFF5BE">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+        android:id="@+id/logo_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"/>
+
+        <TextView
+        android:id="@+id/insnameRoomName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/room_name"
+        android:textSize="28sp"
+        android:layout_below="@id/logo_home"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:shadowColor="#eeeeee"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"/>
+
+        <EditText
+        android:id="@+id/insnameInsertName"
+        android:layout_width="294dp"
+        android:maxWidth="294dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:maxLength="17"
+        android:gravity="center"
+        android:ems="6"
+        android:hint="@string/room_nameinsert"
+        android:background="@drawable/insert_pin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/insnameRoomName"
+        android:padding="6dp"
+        android:textSize="27sp"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/nrtxtNrGrCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nr_groups_cards"
+            android:textSize="22sp"
+            android:layout_below="@id/insnameInsertName"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"/>
+
+        <Button
+            android:id="@+id/nrbtnTriangleUp"
+            android:layout_width="72dp"
+            android:layout_height="57dp"
+            android:layout_below="@id/nrtxtNrGrCards"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/nr_of_cards_triangle_up"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:onClick="increment"/>
+
+        <TextView
+            android:id="@+id/nrCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nr_cards"
+            android:textSize="42sp"
+            android:layout_below="@id/nrbtnTriangleUp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"/>
+
+        <Button
+            android:id="@+id/nrbtnTriangleDown"
+            android:layout_width="69dp"
+            android:layout_height="57dp"
+            android:layout_below="@id/nrCards"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/nr_of_cards_triangle_down"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textSize="28sp"
+            android:onClick="decrement"/>
+
+        <Button
+            android:id="@+id/insnameNext"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nrbtnTriangleDown"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="150dp"
+            android:background="@drawable/btn_next"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/next_btn"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

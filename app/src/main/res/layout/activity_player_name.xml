@@ -56,7 +56,7 @@
             android:importantForAutofill="no" />
 
         <Button
-            android:id="@+id/insnameNext"
+            android:id="@+id/plname_btnNext"
             android:layout_width="294dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/playerName"

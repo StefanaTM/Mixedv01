@@ -80,7 +80,7 @@ public class HomeActivity extends AppCompatActivity {
 
     //function open create room activity
     public void openInsertName(){
-        Intent intent=new Intent(this, RoomNameActivity.class );
+        Intent intent=new Intent(this, RoomSettingsActivity.class );
         startActivity(intent);
     }
 
