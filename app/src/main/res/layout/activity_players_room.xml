@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/pin_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true">
@@ -21,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_pin"
-                android:textSize="28sp"
+                android:textSize="38sp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textColor="#000"
@@ -31,10 +32,10 @@
                 android:shadowRadius="2"/>
 
             <TextView
-                android:id="@+id/Pin"
+                android:id="@+id/Pin_generated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="28sp"
+                android:textSize="38sp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textColor="#000"
@@ -44,6 +45,23 @@
                 android:shadowRadius="2"/>
 
         </LinearLayout>
+
+            <TextView
+                android:id="@+id/waitingForPlayers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/pin_layout"
+                android:textStyle="bold"
+                android:textColor="#8F1313"
+                android:text="@string/txt_waitingForPlayers"
+                android:shadowColor="#eeeeee"
+                android:layout_marginTop="10dp"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2" />
 
     </RelativeLayout>
 

@@ -39,6 +39,6 @@
     <string name="player_name">Player name</string>
     <string name="player_name_hint">player name</string>
     <string name="txt_pin">PIN: </string>
-    <string name="txt_perPlayer">/ player </string>
+    <string name="txt_waitingForPlayers">Waiting for players: </string>
 
 </resources>

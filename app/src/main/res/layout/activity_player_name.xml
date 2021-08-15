@@ -52,7 +52,7 @@
             android:layout_below="@id/txtPlayerName"
             android:padding="6dp"
             android:textSize="27sp"
-            android:inputType="text"
+            android:inputType="textCapSentences"
             android:importantForAutofill="no" />
 
         <Button
