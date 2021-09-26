@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,6 @@
     tools:context=".PlayersRoomActivity"
     android:background="#FFF5BE">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/pin_layout"
@@ -32,7 +29,7 @@
                 android:shadowRadius="2"/>
 
             <TextView
-                android:id="@+id/Pin_generated"
+                android:id="@+id/pin_generated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="38sp"
@@ -63,6 +60,29 @@
                 android:shadowDy="2"
                 android:shadowRadius="2" />
 
-    </RelativeLayout>
+        <ListView
+            android:id="@+id/playersListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/waitingForPlayers"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp"/>
 
-</ScrollView>
+        <Button
+            android:id="@+id/plname_btnNext"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_next"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/next_btn"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+
+</RelativeLayout>

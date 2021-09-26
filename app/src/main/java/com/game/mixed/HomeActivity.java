@@ -1,16 +1,27 @@
 package com.game.mixed;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView txt_homeInsertPin, txt_homeOr;
@@ -20,6 +31,8 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView logo, btn_play;
     private Typeface chelsea;
 
+    public static final String EXTRA_HOMEPINNUMBER = "com.game.mixed.EXTRA_HOMEPINNUMBER";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         //hide toolbar
         //getSupportActionBar().hide();
 
-        //setare font
+        //set font
         txt_homeInsertPin=(TextView) findViewById(R.id.homeInsertPin);
         txt_homeOr=(TextView)findViewById(R.id.homeOr);
         txt_homePin=(EditText) findViewById(R.id.homePinNumber);
@@ -54,22 +67,42 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        //open create room activity
+        //open Room Settings activity
         btn_homeCreateRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openInsertName();
+                openRoomSettings();
             }
         });
 
+        //create a database reference to check if the pin inserted exists in the database
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Rooms");
+        //Select all pins that exists in the database
+        final Query checkPins = ref.orderByChild("pin");
         //open player name activity
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openPlayerName();
+                if (!txt_homePin.getText().toString().isEmpty()){
+                    checkPins.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String localPin = txt_homePin.getText().toString().trim();
+                            if(snapshot.child(localPin).exists()){
+                                openPlayerName();
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Please insert a correct PIN number.", Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }
             }
         });
-
     }
 
     //function open instructions activity
@@ -79,14 +112,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     //function open create room activity
-    public void openInsertName(){
+    public void openRoomSettings(){
         Intent intent=new Intent(this, RoomSettingsActivity.class );
         startActivity(intent);
     }
 
     //function open player name activity
     public void openPlayerName(){
+        int pin=Integer.parseInt(txt_homePin.getText().toString());
         Intent intent=new Intent(this, PlayerNameActivity.class );
+        intent.putExtra(EXTRA_HOMEPINNUMBER, pin);
         startActivity(intent);
     }
 }

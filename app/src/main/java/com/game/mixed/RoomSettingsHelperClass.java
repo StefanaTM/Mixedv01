@@ -29,11 +29,11 @@ public class RoomSettingsHelperClass {
         this.nrCards = nrCards;
     }
 
-    @Override
+   /* @Override
     public String toString(){
         return "Test{"+
                 ", pin="+pin+
                 "Nr. cards="+nrCards + "}";
-    }
+    }*/
 }
 

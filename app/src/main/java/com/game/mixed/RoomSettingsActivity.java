@@ -32,6 +32,9 @@ public class RoomSettingsActivity extends AppCompatActivity {
     RoomSettingsHelperClass room_hc;
     private int nrCardsCount=1;
 
+    //send pin to the next activity
+    public static final String EXTRA_INTEGER_PIN="com.game.mixed.EXTRA_INTEGER_PIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class RoomSettingsActivity extends AppCompatActivity {
         btn_next=(Button) findViewById(R.id.insnameNext);
         nrCards=findViewById(R.id.nrCards);
         txtNrGroupsCards=findViewById(R.id.nrtxtNrGrCards);
+
 
         //Set font style
         chelsea=Typeface.createFromAsset(getAssets(), "chelsea.ttf");
@@ -109,7 +113,14 @@ public class RoomSettingsActivity extends AppCompatActivity {
 
     //functionality open player name activity
     public void openPlayerName(){
+        //send pin to the next activity
+        TextView txtPin = findViewById(R.id.txtPin);
+        txtPin.setText(room_hc.getPin().toString());
+        int pin= Integer.parseInt(txtPin.getText().toString());
+
         Intent intent=new Intent(this, PlayerNameActivity.class);
+        //send pin to the next activity
+        intent.putExtra(EXTRA_INTEGER_PIN, pin);
         startActivity(intent);
     }
 }
