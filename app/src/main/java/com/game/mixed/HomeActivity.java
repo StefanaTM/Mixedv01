@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView logo, btn_play;
     private Typeface chelsea;
 
-    public static final String EXTRA_HOMEPINNUMBER = "com.game.mixed.EXTRA_HOMEPINNUMBER";
+    public static final String EXTRA_INTEGER_PIN_HOME = "com.game.mixed.EXTRA_HOMEPINNUMBER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +121,7 @@ public class HomeActivity extends AppCompatActivity {
     public void openPlayerName(){
         int pin=Integer.parseInt(txt_homePin.getText().toString());
         Intent intent=new Intent(this, PlayerNameActivity.class );
-        intent.putExtra(EXTRA_HOMEPINNUMBER, pin);
+        intent.putExtra(EXTRA_INTEGER_PIN_HOME, pin);
         startActivity(intent);
     }
 }

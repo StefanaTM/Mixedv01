@@ -26,7 +26,7 @@ public class PlayerNameActivity extends AppCompatActivity {
     DatabaseReference ref;
     PlayerNameHelperClass playerName_hc;
     long playerId=0;
-    int pin;
+    int pin, pin_home;
 
     public static final String EXTRA_INTEGER_PIN_PLAYERS="com.game.mixed.EXTRA_INTEGER_PIN_PLAYERS";
 
@@ -37,7 +37,7 @@ public class PlayerNameActivity extends AppCompatActivity {
 
         //retrieve the pin from RoomSettings activity
         Intent intent_auto=getIntent();
-        pin=intent_auto.getIntExtra(RoomSettingsActivity.EXTRA_INTEGER_PIN, 0);
+        pin=intent_auto.getIntExtra(RoomSettingsActivity.EXTRA_INTEGER_PIN_SETTINGS, 0);
         final TextView txtPin=findViewById(R.id.txtPin);
         txtPin.setText(""+pin);
 
@@ -45,9 +45,9 @@ public class PlayerNameActivity extends AppCompatActivity {
         playerName=findViewById(R.id.playerName);
         btnNext=findViewById(R.id.plname_btnNext);
 
-        //retrieve the pin inserted by the users in the home activity
+        //retrieve the pin inserted by the user in the home activity
         Intent intent_home = getIntent();
-        int pin_home = intent_home.getIntExtra(HomeActivity.EXTRA_HOMEPINNUMBER, 0);
+        pin_home = intent_home.getIntExtra(HomeActivity.EXTRA_INTEGER_PIN_HOME, 0);
         if(pin_home!=0){
             txtPin.setText(""+pin_home);
         }
@@ -96,7 +96,11 @@ public class PlayerNameActivity extends AppCompatActivity {
     //functionality open players room activity
     public void openPlayersRoom(){
         TextView txtPin=findViewById(R.id.txtPin);
-        txtPin.setText(""+pin);
+        if(pin !=0){
+            txtPin.setText(""+pin);
+        }else{
+            txtPin.setText(""+pin_home);
+        }
         int pin=Integer.parseInt(txtPin.getText().toString());
         Intent intent=new Intent(this, PlayersRoomActivity.class);
         intent.putExtra(EXTRA_INTEGER_PIN_PLAYERS, pin);

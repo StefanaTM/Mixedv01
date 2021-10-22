@@ -33,7 +33,7 @@ public class RoomSettingsActivity extends AppCompatActivity {
     private int nrCardsCount=1;
 
     //send pin to the next activity
-    public static final String EXTRA_INTEGER_PIN="com.game.mixed.EXTRA_INTEGER_PIN";
+    public static final String EXTRA_INTEGER_PIN_SETTINGS="com.game.mixed.EXTRA_INTEGER_PIN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +120,7 @@ public class RoomSettingsActivity extends AppCompatActivity {
 
         Intent intent=new Intent(this, PlayerNameActivity.class);
         //send pin to the next activity
-        intent.putExtra(EXTRA_INTEGER_PIN, pin);
+        intent.putExtra(EXTRA_INTEGER_PIN_SETTINGS, pin);
         startActivity(intent);
     }
 }

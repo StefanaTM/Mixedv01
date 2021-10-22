@@ -31,7 +31,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_room);
 
-        //retrieve the pin from RoomSettings activity
+        //retrieve the pin from PlayerName activity or from Home activity
         Intent intent=getIntent();
         pin=intent.getIntExtra(PlayerNameActivity.EXTRA_INTEGER_PIN_PLAYERS, 0);
         pinGenerated=findViewById(R.id.pin_generated);
