@@ -28,6 +28,7 @@ public class PlayerNameActivity extends AppCompatActivity {
     long playerId=0;
     int pin, pin_home;
 
+    //Send pin to Players Room activity
     public static final String EXTRA_INTEGER_PIN_PLAYERS="com.game.mixed.EXTRA_INTEGER_PIN_PLAYERS";
 
     @Override

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,9 +24,13 @@ import java.util.ArrayList;
 public class PlayersRoomActivity extends AppCompatActivity {
     private TextView txtPin, pinGenerated, waitingForPlayers;
     private ListView playerslistView;
+    private Button btnNext;
     Typeface chelsea;
     int pin;
     PlayerNameHelperClass hc_playerName;
+
+    //Send pin to WriteAction activity
+    public static final String EXTRA_INTEGER_PIN_ACTION="com.game.mixed.EXTRA_INTEGER_PIN_ACTION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
         txtPin=findViewById(R.id.txtPin);
         waitingForPlayers=findViewById(R.id.waitingForPlayers);
         playerslistView=findViewById(R.id.playersListView);
+        btnNext=findViewById(R.id.players_btnNext);
 
 
         //Set font style
@@ -47,6 +54,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
         txtPin.setTypeface(chelsea);
         waitingForPlayers.setTypeface(chelsea);
         pinGenerated.setTypeface(chelsea);
+        btnNext.setTypeface(chelsea);
 
         final ArrayList<String> playersList = new ArrayList<>();
         final ArrayAdapter playersListAdapter=new ArrayAdapter<String>(this, R.layout.players_list_item, R.id.playersList_xml, playersList);
@@ -76,5 +84,22 @@ public class PlayersRoomActivity extends AppCompatActivity {
             }
         });
 
+        //Press button to go to write action activity
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openWriteActionRoom();
+            }
+        });
+    }
+
+    //functionality open Write Action activity
+    public void openWriteActionRoom(){
+        TextView pinGenerated=findViewById(R.id.pin_generated);
+        pinGenerated.setText(""+pin);
+        int pin=Integer.parseInt(pinGenerated.getText().toString());
+        Intent intent=new Intent(this, WriteActionActivity.class);
+        intent.putExtra(EXTRA_INTEGER_PIN_ACTION, pin);
+        startActivity(intent);
     }
 }

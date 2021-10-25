@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerNameActivity"
+    android:background="#FFF5BE">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="@string/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="80dp"/>
+
+        <TextView
+            android:id="@+id/txtAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txt_action"
+            android:textSize="28sp"
+            android:layout_below="@id/logo_home"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"/>
+
+        <EditText
+            android:id="@+id/text_action"
+            android:layout_width="294dp"
+            android:maxWidth="294dp"
+            android:layout_height="120dp"
+            android:maxHeight="48dp"
+            android:maxLength="40"
+            android:gravity="center"
+            android:ems="6"
+            android:hint="@string/action_hint"
+            android:background="@drawable/insert_pin"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtAction"
+            android:padding="6dp"
+            android:textSize="27sp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/action_btnNext"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_action"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_next"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/next_btn"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nr_cards"
+            android:textSize="42sp"
+            android:layout_below="@id/action_btnNext"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"/>
+
+    </RelativeLayout>
+
+</ScrollView>
