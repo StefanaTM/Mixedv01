@@ -27,7 +27,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
     private Button btnNext;
     Typeface chelsea;
     int pin;
-    PlayerNameHelperClass hc_playerName;
+    PlayerNameHelperClass playerName_hc;
 
     //Send pin to WriteAction activity
     public static final String EXTRA_INTEGER_PIN_ACTION="com.game.mixed.EXTRA_INTEGER_PIN_ACTION";
@@ -60,7 +60,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
         final ArrayAdapter playersListAdapter=new ArrayAdapter<String>(this, R.layout.players_list_item, R.id.playersList_xml, playersList);
         playerslistView.setAdapter(playersListAdapter);
         //initialize instance of PlayerNameHelperClass
-        hc_playerName = new PlayerNameHelperClass();
+        playerName_hc = new PlayerNameHelperClass();
 
         DatabaseReference refPlayersList= FirebaseDatabase.getInstance().getReference().child("Players");
         //add query to interrogate the players table in order to retrieve just the children with same pin
@@ -71,9 +71,8 @@ public class PlayersRoomActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 playersList.clear();
                 for(DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    hc_playerName = snapshot.getValue(PlayerNameHelperClass.class);
-                    playersList.add(hc_playerName.getPlayerName());
-                    //playersList.add(snapshot.getValue().toString());
+                    playerName_hc = snapshot.getValue(PlayerNameHelperClass.class);
+                    playersList.add(playerName_hc.getPlayerName());
                 }
                 playersListAdapter.notifyDataSetChanged();
             }

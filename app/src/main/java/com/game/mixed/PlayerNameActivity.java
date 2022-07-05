@@ -36,7 +36,7 @@ public class PlayerNameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_name);
 
-        //retrieve the pin from RoomSettings activity
+        //retrieve the pin from RoomSettings activity. Case new room created by user
         Intent intent_auto=getIntent();
         pin=intent_auto.getIntExtra(RoomSettingsActivity.EXTRA_INTEGER_PIN_SETTINGS, 0);
         final TextView txtPin=findViewById(R.id.txtPin);
@@ -46,7 +46,7 @@ public class PlayerNameActivity extends AppCompatActivity {
         playerName=findViewById(R.id.playerName);
         btnNext=findViewById(R.id.plname_btnNext);
 
-        //retrieve the pin inserted by the user in the home activity
+        //retrieve the pin from Home activity. Case users inserted pin in home activity
         Intent intent_home = getIntent();
         pin_home = intent_home.getIntExtra(HomeActivity.EXTRA_INTEGER_PIN_HOME, 0);
         if(pin_home!=0){
@@ -62,7 +62,7 @@ public class PlayerNameActivity extends AppCompatActivity {
         playerName_hc = new PlayerNameHelperClass();
         ref= FirebaseDatabase.getInstance().getReference().child("Players");
 
-        //create pk for the Players class
+        //create pk counter for Players class
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -81,11 +81,11 @@ public class PlayerNameActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //take player name from user and insert it into firebase
                 playerName_hc.setPlayerName(playerName.getText().toString().trim());
-                //take room pin and assign it to the player in firebase
+                //take room pin and assign it to the player pin in firebase
                 int pin=Integer.parseInt(txtPin.getText().toString().trim());
                 playerName_hc.setPin(pin);
 
-                //increase player id counter
+                //increase player class id counter
                 ref.child(String.valueOf(playerId+1)).setValue(playerName_hc);
 
                 //open players room activity

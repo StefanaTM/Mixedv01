@@ -41,7 +41,7 @@
     <string name="txt_pin">PIN: </string>
     <string name="txt_waitingForPlayers">Waiting for players: </string>
     <string name="txt_action">Action</string>
-    <string name="action_hint">Write an action</string>
+    <string name="action_hint">Write an action here...</string>
     <string name="txt_place">Place</string>
     <string name="txt_continuation_of_action">Continuation of action</string>
 

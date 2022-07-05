@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WriteActionActivity"></activity>
+        <activity android:name=".WritePlaceActivity"></activity>
+        <activity android:name=".WriteActionActivity" />
         <activity android:name=".PlayersRoomActivity" />
         <activity android:name=".PlayerNameActivity" />
         <activity android:name=".RoomSettingsActivity" />
