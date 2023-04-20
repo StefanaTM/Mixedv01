@@ -31,6 +31,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
 
     //Send pin to WriteAction activity
     public static final String EXTRA_INTEGER_PIN_ACTION="com.game.mixed.EXTRA_INTEGER_PIN_ACTION";
+    public static final String EXTRA_INTEGER_NRCARDS="com.game.mixed.EXTRA_INTEGER_NRCARDS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,7 @@ public class PlayersRoomActivity extends AppCompatActivity {
         int pin=Integer.parseInt(pinGenerated.getText().toString());
         Intent intent=new Intent(this, WriteActionActivity.class);
         intent.putExtra(EXTRA_INTEGER_PIN_ACTION, pin);
+        intent.putExtra(EXTRA_INTEGER_NRCARDS, 11); //Send default value to WriteActionActivity
         startActivity(intent);
     }
 }

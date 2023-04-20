@@ -25,7 +25,7 @@ import com.google.gson.JsonElement;
 
 public class WriteActionActivity extends AppCompatActivity {
 
-    private TextView txtAction, txtPin, txtidAction;
+    private TextView txtAction, txtPin, txtidAction, txtNrCards;
     private EditText textAction;
     private Button btnNext;
     Typeface chelsea;
@@ -38,6 +38,8 @@ public class WriteActionActivity extends AppCompatActivity {
 
     //Send pin to write action/place activity
     public static final String EXTRA_INTEGER_PIN_ACTIONLOOP="com.game.mixed.EXTRA_INTEGER_PIN_ACTION";
+    //Send nrCards to Action or Place activity
+    public static final String EXTRA_INTEGER_NRCARDS="com.game.mixed.EXTRA_INTEGER_NRCARDS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public class WriteActionActivity extends AppCompatActivity {
         txtPin=findViewById(R.id.txtPin);
         txtPin.setText(""+pin);
 
-        //retrieve the pin from WriteAction activity
+        //retrieve the pin from WriteAction activity - when users already wrote an action
         if(pin == 0){
             pin=intent.getIntExtra(WriteActionActivity.EXTRA_INTEGER_PIN_ACTIONLOOP, 0);
             txtPin=findViewById(R.id.txtPin);
@@ -59,8 +61,9 @@ public class WriteActionActivity extends AppCompatActivity {
 
         txtAction = findViewById(R.id.txtAction);
         textAction=findViewById(R.id.text_action);
-        txtidAction=findViewById(R.id.txtidAction); //needed to arrange the action with places and with continuation of action values in the end based on this counter
+        txtidAction=findViewById(R.id.txtidAction); //needed to group the action with places and with continuation of action values in the end based on this counter
         btnNext=findViewById(R.id.action_btnNext);
+        txtNrCards = findViewById(R.id.txtNrCards);
 
         //Set font style
         chelsea= Typeface.createFromAsset(getAssets(), "chelsea.ttf");
@@ -103,14 +106,13 @@ public class WriteActionActivity extends AppCompatActivity {
                 refAction.child(String.valueOf(actionId+1)).setValue(writeAction_hc);
 
                 //This needs to be changed with a rule implemented in method openWriteActivity below
-                openWriteActionActivity();
+                openActionOrPlaceActivity();
             }
         });
-
     }
 
     //functionality open Write Action activity or Write Place activity
-        public void openWriteActivity(){
+        public void openActionOrPlaceActivity(){
             //retrieve the number of cards set by user based on the pin number
             refRooms= FirebaseDatabase.getInstance().getReference("Rooms");
             Query queryNrCards =refRooms.orderByChild("pin").equalTo(pin);
@@ -120,13 +122,18 @@ public class WriteActionActivity extends AppCompatActivity {
                     //access room settings helper class in order to read the values from db
                     room_hc = snapshot.getValue(RoomSettingsHelperClass.class);
                     //assign to int nrCards the value found of the attribute nrCards found by queryNrCards
-                    int nrCards = Integer.parseInt(room_hc.getNrCards().toString());
-                    int initial = 1;
-                    while(initial < nrCards){
-                        openWriteActionActivity();
-                        initial ++;
+                    int nrCards = 4; //Integer.parseInt(room_hc.getNrCards().toString().trim()); //If I let //4 instead of retrieing room_hc value it work bt in infinite loop
+                    txtNrCards.setText(""+nrCards);
+                    Intent intent = new Intent();
+                    int nrCardsToDecrease = intent.getIntExtra(WriteActionActivity.EXTRA_INTEGER_NRCARDS, 11); //because the nrOfCards set by users cannot be over 10
+                    if(nrCardsToDecrease == 11){//first time loop
+                        nrCardsToDecrease =nrCards; //4 let's say set by the user
                     }
-                    if (initial == nrCards){
+                    if(nrCardsToDecrease > 0 ){ //4
+                        nrCardsToDecrease = nrCardsToDecrease-1;
+                        txtNrCards.setText(""+nrCardsToDecrease);
+                        openWriteActionActivity();
+                    }else {
                         openWritePlaceActivity();
                     }
                 }
@@ -140,8 +147,11 @@ public class WriteActionActivity extends AppCompatActivity {
 
     public void openWriteActionActivity(){
         int pin=Integer.parseInt(txtPin.getText().toString());
+        int nrCardsRemaining= Integer.parseInt(txtNrCards.getText().toString());
         Intent intent=new Intent(this, WriteActionActivity.class);
-        intent.putExtra(EXTRA_INTEGER_PIN_ACTIONLOOP, pin);
+        //send pin and the remaining nr of cards to be filled in to the same activity
+        intent.putExtra(EXTRA_INTEGER_PIN_ACTIONLOOP, pin);//ok
+        intent.putExtra(EXTRA_INTEGER_NRCARDS, nrCardsRemaining);
         startActivity(intent);
     }
     public void openWritePlaceActivity(){

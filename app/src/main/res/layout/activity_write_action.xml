@@ -28,22 +28,6 @@
             android:shadowDy="2"
             android:shadowRadius="2"/>
 
-        <TextView
-            android:id="@+id/txtidAction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textSize="28sp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="10dp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:shadowColor="#eeeeee"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:visibility="gone"/>
-
         <EditText
             android:id="@+id/text_action"
             android:layout_width="294dp"
@@ -92,6 +76,38 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/txtidAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="28sp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txtNrCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="28sp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:shadowColor="#eeeeee"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 
